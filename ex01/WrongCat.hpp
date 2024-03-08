@@ -1,28 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftholoza <ftholoza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/06 19:14:32 by ftholoza          #+#    #+#             */
-/*   Updated: 2024/03/08 11:50:56 by ftholoza         ###   ########.fr       */
+/*   Created: 2024/03/06 19:09:09 by ftholoza          #+#    #+#             */
+/*   Updated: 2024/03/06 20:55:11 by ftholoza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef WRONGCAT_HPP
+# define WRONGAT_HPP
 
 #include <iostream>
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-class Dog: public Animal
+class WrongCat: public WrongAnimal
 {
 	public:
-		Dog();
-		~Dog();
-		Dog(Dog &to_copy);
-		void	makeSound()const;
+		WrongCat();
+		~WrongCat();
+		WrongCat(WrongCat &to_copy);
+		void	makeSound() const override;
+
 };
 
 #endif

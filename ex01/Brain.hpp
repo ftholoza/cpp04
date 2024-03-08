@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftholoza <ftholoza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/06 19:14:32 by ftholoza          #+#    #+#             */
-/*   Updated: 2024/03/08 11:50:56 by ftholoza         ###   ########.fr       */
+/*   Created: 2024/03/08 13:05:17 by ftholoza          #+#    #+#             */
+/*   Updated: 2024/03/08 18:07:57 by ftholoza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-#include <iostream>
-#include "Animal.hpp"
+# include <iostream>
 
-class Dog: public Animal
+class Brain
 {
+	private:
+		std::string ideas[100];
 	public:
-		Dog();
-		~Dog();
-		Dog(Dog &to_copy);
-		void	makeSound()const;
+		Brain();
+		~Brain();
+		Brain(Brain &to_copy);
+		void	setIdeas(std::string const idea, int i);
+		std::string 	getIdeas(int i);
+		Brain &operator=(Brain const &to_copy);	
 };
 
 #endif

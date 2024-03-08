@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ftholoza <ftholoza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/03/06 19:14:32 by ftholoza          #+#    #+#             */
-/*   Updated: 2024/03/08 11:50:56 by ftholoza         ###   ########.fr       */
+/*   Created: 2024/03/06 19:09:09 by ftholoza          #+#    #+#             */
+/*   Updated: 2024/03/08 15:34:10 by ftholoza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef CAT_HPP
+# define CAT_HPP
 
 #include <iostream>
 #include "Animal.hpp"
+#include "Brain.hpp"
 
-class Dog: public Animal
+class Cat: public Animal
 {
 	public:
-		Dog();
-		~Dog();
-		Dog(Dog &to_copy);
-		void	makeSound()const;
+		Cat();
+		~Cat();
+		Cat(Cat &to_copy);
+		void	makeSound() const;
+		Brain *getBrain() override;
+		Cat& operator=(Cat const &to_copy);
+	private:
+		Brain *_brain;
+
 };
 
 #endif
