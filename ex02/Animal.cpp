@@ -6,7 +6,7 @@
 /*   By: ftholoza <ftholoza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 19:15:43 by ftholoza          #+#    #+#             */
-/*   Updated: 2024/03/11 10:56:39 by ftholoza         ###   ########.fr       */
+/*   Updated: 2024/03/11 10:52:41 by ftholoza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,30 +14,28 @@
 
 Animal::Animal()
 {
-	std::cout << "Animal: constructor called" << std::endl;
 	this->type = "none";
+	std::cout << "\033[1;34mDEFAULT ANIMAL CONSTRUCTOR: \033[0m" << std::endl;
 	return ;
 }
 
 Animal::~Animal()
 {
-	std::cout << "Animal: destructor called" << std::endl;
+	std::cout << "\033[1;31mANIMAL DESTRUCTOR: \033[0m" << std::endl;
 	return ;
 }
 
 Animal::Animal(Animal &to_copy)
 {
-	std::cout << "Animal: copy constructor called" << std::endl;
-	*this = to_copy;
-	return ;	
+	this->type = to_copy.type;
+	std::cout << "\033[1;32mCOPY ANIMAL CONSTRUCTOR: \033[0m" << this->type << std::endl;
 }
 
-Animal& Animal::operator=(Animal const &to_copy)
+Animal& Animal::operator=(Animal &to_copy)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
-        if (this != &to_copy)
-			this->type = to_copy.type;
-        return (*this);
+	std::cout << "\033[1;32mCOPY ASSIGNEMENT OPERATOR: \033[0m" << this->type << std::endl;
+	this->type = to_copy.type;
+    return (*this);
 }
 
 std::string	Animal::getType() const
@@ -45,7 +43,7 @@ std::string	Animal::getType() const
 	return (this->type);
 }
 
-void	Animal::makeSound() const
+void	Animal::makeSound()
 {
 	std::cout << "Animal: Animal sounds..." << std::endl;
 }
