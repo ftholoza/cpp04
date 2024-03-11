@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftholoza <ftholoza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: francesco <francesco@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 19:32:32 by ftholoza          #+#    #+#             */
-/*   Updated: 2024/03/08 19:04:15 by ftholoza         ###   ########.fr       */
+/*   Updated: 2024/03/10 13:06:29 by francesco        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ Dog::~Dog()
 	return ;
 }
 
-Dog::Dog(Animal &to_copy): Animal(to_copy)
+Dog::Dog(Dog &to_copy): Animal(to_copy)
 {
 	std::cout << "Dog: copy constructor called" << std::endl;
 	this->_brain = new Brain(*(to_copy.getBrain()));
@@ -53,4 +53,17 @@ Dog& Dog::operator=(Dog &to_copy)
 Brain *Dog::getBrain()
 {
 	return this->_brain;
+}
+
+void	Dog::setIdea(std::string idea, int i)
+{
+	this->getBrain()->setIdeas(idea, i);
+	return ;
+}
+
+void	Dog::displayIdeas()
+{
+	for (int i = 0; i < 100; i++)
+	if (!this->getBrain()->getIdeas(i).empty())
+		std::cout << this->getBrain()->getIdeas(i) << std::endl;
 }

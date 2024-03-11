@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftholoza <ftholoza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: francesco <francesco@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 19:25:39 by ftholoza          #+#    #+#             */
-/*   Updated: 2024/03/08 19:04:21 by ftholoza         ###   ########.fr       */
+/*   Updated: 2024/03/10 13:06:50 by francesco        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,17 @@ Cat& Cat::operator=(Cat const &to_copy)
 Brain *Cat::getBrain()
 {
 	return (this->_brain);
+}
+
+void	Cat::setIdea(std::string idea, int i)
+{
+	this->getBrain()->setIdeas(idea, i);
+	return ;
+}
+
+void	Cat::displayIdeas()
+{
+	for (int i = 0; i < 100; i++)
+	if (!this->getBrain()->getIdeas(i).empty())
+		std::cout << this->getBrain()->getIdeas(i) << std::endl;
 }

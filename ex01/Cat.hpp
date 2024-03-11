@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftholoza <ftholoza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: francesco <francesco@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 19:09:09 by ftholoza          #+#    #+#             */
-/*   Updated: 2024/03/08 15:34:10 by ftholoza         ###   ########.fr       */
+/*   Updated: 2024/03/10 13:06:15 by francesco        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,10 @@ class Cat: public Animal
 		~Cat();
 		Cat(Cat &to_copy);
 		void	makeSound() const;
-		Brain *getBrain() override;
+		Brain *getBrain();
 		Cat& operator=(Cat const &to_copy);
+		void	setIdea(std::string idea, int i);
+		void	displayIdeas();
 	private:
 		Brain *_brain;
 
