@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftholoza <ftholoza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: francesco <francesco@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 15:44:05 by ftholoza          #+#    #+#             */
-/*   Updated: 2024/03/11 20:49:24 by ftholoza         ###   ########.fr       */
+/*   Updated: 2024/03/12 01:40:27 by francesco        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,12 +104,71 @@ int	main(void)
 	b = a;
 	delete a.createMateria("ice");
 	delete b.createMateria("ice");
-
-
+	test = NULL;
+	std::cout << "here: " << test << std::endl;
+	for (int i = 0; i < 4; i++)
+		a.learnMateria(test);
+	a.display();
+	b.display();
+	AMateria *test_c;
+	test_c = a.createMateria("cure");
+	std::cout << test_c << std::endl;
+	std::cout << std::endl <<"\033[1;32mCharacter tests:\033[0m" << std::endl;
+	ICharacter* souarez = new Character("suarez");
+	souarez->equip(a.createMateria("ice"));
+	souarez->equip(a.createMateria("ice"));
+	souarez->equip(NULL);
+	souarez->equip(a.createMateria("cure"));
+	souarez->equip(a.createMateria("ds"));
+	ICharacter* lopez = new Character("lopez");
+	AMateria *floor[4];
+	floor[0] = a.createMateria("ice");
+	floor[1] = a.createMateria("ice");
+	floor[2] = a.createMateria("ice");
+	floor[3] = a.createMateria("fsfdf");
+	for (int i = 0; i < 4; i++)
+		lopez->equip(floor[i]);
+	for (int i = 0; i < 4; i++)
+		lopez->unequip(i);
+	lopez->unequip(0);
+	Character bartez("bartez");
+	for (int i = 0; i < 4; i++)
+		bartez.equip(floor[i]);
+	bartez.display();
+	for (int i = 0; i < 4; i++)
+		bartez.unequip(i);
+	bartez.display();
+	for (int i = 0; i < 4; i++)
+		bartez.equip(floor[i]);
+	bartez.unequip(1);
+	bartez.display();
+	bartez.unequip(5);
+	for (int i = 0; i < 4; i++)
+		bartez.unequip(i);
+	bartez.display();
+	AMateria *stock[3];
+	stock[0] = book_a->createMateria("cure");
+	stock[1] = book_a->createMateria("ice");
+	stock[2] = book_a->createMateria("ice");
+	for (int i = 0; i < 3; i++)
+		bartez.equip(stock[i]);
+	bartez.unequip(1);
+	bartez.display();
+	Character *cortez =  new Character(bartez);
+	cortez->display();
+	
+	
+	
 	std::cout << std::endl <<"\033[1;32mdestructors:\033[0m" << std::endl;
 	delete book_a;
 	delete book_b;
 	delete pablo;
 	delete louis;
 	delete test2;
+	delete souarez;
+	delete lopez;
+	delete cortez;
+	for (int i = 0; i < 3; i++)
+		delete floor[i];
+	delete stock[1];
 }

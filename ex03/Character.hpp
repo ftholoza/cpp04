@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftholoza <ftholoza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: francesco <francesco@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 16:42:30 by ftholoza          #+#    #+#             */
-/*   Updated: 2024/03/11 18:03:56 by ftholoza         ###   ########.fr       */
+/*   Updated: 2024/03/12 01:05:17 by francesco        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ class Character : public ICharacter
 		void	equip(AMateria *m) override;
 		void	unequip(int idx) override;
 		void	use(int idx, ICharacter& target) override;
+		void	display();
 };
 
 #endif

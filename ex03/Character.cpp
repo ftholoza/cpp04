@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftholoza <ftholoza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: francesco <francesco@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 16:51:13 by ftholoza          #+#    #+#             */
-/*   Updated: 2024/03/11 19:59:37 by ftholoza         ###   ########.fr       */
+/*   Updated: 2024/03/12 01:30:24 by francesco        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,12 @@ Character &Character::operator=(Character &to_copy)
 	{
 		this->i = to_copy.i;
 		for(int i = 0; i < 4; i++)
-			this->inventory[i] = to_copy.inventory[i];
+		{
+			if (to_copy.inventory[i] != NULL)
+				this->inventory[i] = to_copy.inventory[i]->clone();
+			else
+				this->inventory[i] = NULL;
+		}
 		this->_name = to_copy._name;
 	}
 	return (*this);
@@ -107,6 +112,7 @@ void	Character::unequip(int idx)
 	if (this->inventory[idx] == NULL)
 	{
 		std::cout << "Character: " << this->_name << ": slot empty" << std::endl;
+		return ;
 	}
 	std::cout << "Character: " << this->_name << ": unequip:" << this->inventory[idx]->getType() << std::endl;
 	this->inventory[idx] = NULL;
@@ -127,4 +133,17 @@ void	Character::use(int idx, ICharacter& target)
 	}
 	this->inventory[idx]->use(target);
 	return ;
+}
+
+void	Character::display()
+{
+	std::cout << std::endl <<"\033[1;33m-----------------------------------\033[0m" << std::endl;
+	std::cout << "\033[1;33m|             CHARACTER           |\033[0m" << std::endl;
+	std::cout << "\033[1;33m-----------------------------------\033[0m" << std::endl;
+	std::cout << "INVENTORY:" << std::endl;
+	for (int i = 0; i < 4; i++)
+	{
+		if (this->inventory[i] != NULL)
+			std::cout << i << ": " << this->inventory[i]->getType() << ": [" << this->inventory[i] << "]" << std::endl;
+	}
 }

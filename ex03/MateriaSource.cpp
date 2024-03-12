@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   MateriaSource.cpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ftholoza <ftholoza@student.42.fr>          +#+  +:+       +#+        */
+/*   By: francesco <francesco@student.42.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 19:05:15 by ftholoza          #+#    #+#             */
-/*   Updated: 2024/03/11 20:48:53 by ftholoza         ###   ########.fr       */
+/*   Updated: 2024/03/12 00:20:31 by francesco        ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,9 +92,22 @@ AMateria* MateriaSource::createMateria(std::string const &type)
 {
 	for (int i = 0; i < 4; i++)
 	{
-		if (stock[i] != NULL && stock[i]->getType() == type)
-			return (stock[i]->clone());
+		if (this->stock[i] != NULL && this->stock[i]->getType() == type)
+			return (this->stock[i]->clone());
 	}
 	std::cout << "MateriaSource: type: " << type << ": not learned" << std::endl;
 	return NULL;
+}
+
+void MateriaSource::display()
+{
+	std::cout << std::endl <<"\033[1;33m-----------------------------------\033[0m" << std::endl;
+	std::cout << "\033[1;33m|           MATERIASOURCE         |\033[0m" << std::endl;
+	std::cout << "\033[1;33m-----------------------------------\033[0m" << std::endl;
+	std::cout << "STOCK:" << std::endl;
+	for (int i = 0; i < 4; i++)
+	{
+		if (this->stock[i] != NULL)
+			std::cout << i << ": " << this->stock[i]->getType() << ": [" << this->stock[i] << "]" << std::endl;
+	}
 }
