@@ -6,7 +6,7 @@
 /*   By: ftholoza <ftholoza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 19:09:09 by ftholoza          #+#    #+#             */
-/*   Updated: 2024/03/11 10:54:24 by ftholoza         ###   ########.fr       */
+/*   Updated: 2024/05/29 20:30:19 by ftholoza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class Cat: public Animal
 		Cat();
 		~Cat();
 		Cat(Cat &to_copy);
-		void	makeSound() override;
+		void	makeSound();
 		Brain *getBrain();
 		Cat& operator=(Cat const &to_copy);
 		void	setIdea(std::string idea, int i);

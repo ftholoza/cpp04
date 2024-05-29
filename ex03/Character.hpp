@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: francesco <francesco@student.42.fr>        +#+  +:+       +#+        */
+/*   By: ftholoza <ftholoza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 16:42:30 by ftholoza          #+#    #+#             */
-/*   Updated: 2024/03/12 01:05:17 by francesco        ###   ########.fr       */
+/*   Updated: 2024/05/29 20:32:35 by ftholoza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ class Character : public ICharacter
 		Character(Character &to_copy);
 		Character &operator=(Character &to_copy);
 		~Character();
-		std::string const &getName() const override;
-		void	equip(AMateria *m) override;
-		void	unequip(int idx) override;
-		void	use(int idx, ICharacter& target) override;
+		std::string const &getName() const ;
+		void	equip(AMateria *m) ;
+		void	unequip(int idx) ;
+		void	use(int idx, ICharacter& target) ;
 		void	display();
 };
 

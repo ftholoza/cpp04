@@ -6,7 +6,7 @@
 /*   By: ftholoza <ftholoza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 15:26:23 by ftholoza          #+#    #+#             */
-/*   Updated: 2024/03/11 17:40:10 by ftholoza         ###   ########.fr       */
+/*   Updated: 2024/05/29 20:31:55 by ftholoza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,6 @@ AMateria *AMateria::clone() const
 
 void AMateria::use(ICharacter &target)
 {
+	(void)target;
 	return ;
 }

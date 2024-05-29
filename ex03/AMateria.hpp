@@ -6,7 +6,7 @@
 /*   By: ftholoza <ftholoza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 15:21:10 by ftholoza          #+#    #+#             */
-/*   Updated: 2024/03/11 17:39:25 by ftholoza         ###   ########.fr       */
+/*   Updated: 2024/05/29 20:32:11 by ftholoza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class AMateria
 		std::string _type;
 	public:
 		AMateria();
-		~AMateria();
+		virtual ~AMateria();
 		AMateria(AMateria &to_copy);
 		AMateria(std::string const &type);
 		AMateria &operator=(AMateria &to_copt);

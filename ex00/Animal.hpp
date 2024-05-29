@@ -6,7 +6,7 @@
 /*   By: ftholoza <ftholoza@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/06 19:04:24 by ftholoza          #+#    #+#             */
-/*   Updated: 2024/03/06 20:34:42 by ftholoza         ###   ########.fr       */
+/*   Updated: 2024/05/29 20:28:20 by ftholoza         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class	Animal
 		std::string type;
 	public:
 		Animal();
-		~Animal();
+		virtual ~Animal();
 		Animal(Animal &to_copy);
 		Animal& operator=(Animal const &to_copy);
 		std::string	getType() const;
